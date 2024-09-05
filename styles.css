@@ -1,0 +1,195 @@
+/* styles.css */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  color: var(--text);
+}
+
+li {
+  list-style: none;
+}
+
+:root {
+  --body: #e5e9eb;
+  --card: #fff;
+  --button: #007bff;
+  --outline: #0150a04f;
+  --card2: #cfcfcf49;
+  --colorButton: #fff;
+  --border: #80808036;
+  --sucess: green;
+  --error: #fd3737;
+  --text: #000;
+  --text2: #313131e3;
+}
+
+:root[theme-system="dark"] {
+  --body: #181818;
+  --card: #2a2a2a;
+  --button: #1a73e8;
+  --outline: #4285f44f;
+  --card2: #3a3a3a49;
+  --colorButton: #ffffff;
+  --border: #ffffff36;
+  --sucess: #00c853;
+  --error: #ff5252;
+  --text: #e0e0e0;
+  --text2: #b3b3b3e3;
+}
+
+body {
+  background-color: var(--body);
+}
+
+button {
+  cursor: default;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.4;
+  }
+}
+
+a {
+  cursor: default;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--card);
+  z-index: 999;
+}
+
+.spinnerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spinner1 {
+  border: 3px solid var(--body);
+  padding: 3px;
+  border-radius: 50%;
+  border-top: 3px solid transparent;
+  animation: spinner .4s linear infinite;
+
+  .spinner2 {
+    border: 3px solid var(--body);
+    padding: 3px;
+    border-radius: 50%;
+    animation: spinner .1s linear infinite reverse;
+    border-top: 3px solid transparent;
+  }
+}
+
+.spinner4 {
+  border: 3px solid var(--button);
+  padding: 3px;
+  border-radius: 50%;
+  border-top: 3px solid transparent;
+  animation: spinner .4s linear infinite;
+
+  .spinner5 {
+    border: 3px solid var(--button);
+    padding: 3px;
+    border-radius: 50%;
+    animation: spinner .1s linear infinite reverse;
+    border-top: 3px solid transparent;
+  }
+}
+
+@keyframes spinner {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes bownce {
+  from {
+    transform: scale(0.1);
+  }
+
+  to {
+    transform: scale(1.1);
+  }
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  background-color: var(--card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cdd {
+  border: 1px solid var(--border);
+  padding: 20px;
+  border-radius: 6px;
+}
+
+.popUp {
+  min-width: 320px;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 22px;
+
+  .message {
+    text-align: center;
+
+    .sucess {
+      color: green;
+    }
+
+    .error {
+      color: #f03939;
+    }
+  }
+
+  button {
+    padding: 8px 12px;
+    color: var(--button);
+    background-color: transparent;
+    border: none; 
+    border-radius: 6px;
+    font-weight: bold;
+  }
+}
+.contentElements{
+  animation: opacity .3s linear;
+}
+@keyframes opacity {
+  from{
+    opacity: 0;
+    transform: scale(0.0);
+  } to{
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+.textError.sucess{
+  color: var(--sucess);
+}
+.textError.error{
+  color: var(--error);
+}

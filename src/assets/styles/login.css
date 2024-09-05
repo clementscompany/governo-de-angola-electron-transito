@@ -1,0 +1,198 @@
+.mainContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+}
+.loginContainer{
+    position: relative;
+    background-color: var(--card);
+    width: calc(100% - 50px);
+    height: calc(100% - 50px);
+    border-radius: 6px;
+    box-shadow: 0 3px 2px #8080805d;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 50px;
+    overflow: hidden;
+
+    .logo{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 12px;
+        h1{
+            text-align: center;
+            color: var(--button);
+        }
+    }
+    form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 22px;
+        border-radius: 6px;
+        border: 1px solid var(--border);
+        animation: bownce .3s linear;
+    
+
+        a{
+            text-align: right;
+            text-decoration: none;
+            display: block;
+            width: 100%;
+            color: var(--button);
+        }
+
+        .inputBox{
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            flex: 1;
+            width: 100%;
+            max-width: 400px;
+            min-width: 400px;
+            margin: 12px 0;
+            input{
+                font-size: 13pt;
+                padding: 13px;
+                border: none;
+                border-radius: 6px;
+                outline: none;
+                background-color: var(--card2);
+                &:focus{
+                    outline: 2px solid var(--outline);
+                }
+            }
+            input.error{
+                outline: 2px solid var(--error);
+            }
+            input.sucess{
+                outline: 2px solid var(--sucess);
+            }
+            select{
+                font-size: 13pt;
+                padding: 13px;
+                border: none;
+                border-radius: 6px;
+                outline: none;
+                background-color: var(--card2);
+                &:focus{
+                    outline: 2px solid var(--outline);
+                }
+                option{
+                  background-color: var(--card);
+                }
+            }
+            label{
+                color: var(--button);
+            }
+            button{
+                background-color: var(--button);
+                padding: 13px;
+                border: none;
+                width: 150px;
+                border-radius: 6px;
+                color: var(--colorButton);
+                font-weight: bold;
+                display: none;
+            }
+            button.active{
+                display: block;
+                animation: bownce .3s linear;
+            }
+        }
+        .passwordBox{
+            display: none;
+        }
+        .passwordBox.active{
+            display: flex;
+            animation: bownce .3s linear;
+        }
+        .textError{
+            padding: 12px;
+            margin: 12px 0;
+            background-color: var(--button);
+            border-radius: 6px;
+            width: 100%;
+            text-align: left;
+            color: var(--colorButton);
+            span{
+                color: var(--colorButton);
+            }
+        }
+    }
+}
+.setPassword{
+    animation: bownce .3s linear;
+
+    .eyeButton{
+        padding: 12px;
+        border-radius: 50%;
+        border: none;
+    }
+    .textError{
+        padding: 12px;
+        margin: 12px 0;
+        background-color: var(--button);
+        border-radius: 6px;
+        width: 100%;
+        color: var(--colorButton);
+        text-align: left;
+    }
+
+    .inputBox{
+        width: 400px;
+        display: flex;
+        flex-direction: column;
+        flex-basis: 350px;
+        margin: 12px 0;
+        gap: 6px;
+
+        input{
+            font-size: 13pt;
+            padding: 13px;
+            border: none;
+            border-radius: 6px;
+            outline: none;
+            background-color: var(--card2);
+            &:focus{
+                outline: 2px solid var(--outline);
+            }
+        }
+        input.error{
+            outline: 2px solid var(--error);
+        }
+        input.sucess{
+            outline: 2px solid var(--sucess);
+        }
+        label{
+            color: var(--button);
+        }
+    }
+    .inputBoxButtom{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 22px 0;
+        button{
+            padding: 13px;
+            border: none;
+            width: 150px;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+        button:nth-of-type(1){
+            background-color: var(--button);
+            color: var(--colorButton);
+        }
+        button:nth-of-type(2){
+            color: var(--button);
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "sistema-transito-governo-de-angola",
+  "productName": "false-editor-gaze-x6z1s",
+  "description": "My Electron application description",
+  "keywords": [],
+  "main": "./main.js",
+  "version": "1.0.0",
+  "author": "moises",
+  "scripts": {
+    "start": "electron .",
+    "build":"electron-builder"
+  },
+  "devDependencies": {
+    "electron": "30.0.2",
+    "electron-builder": "^25.0.5",
+    "sass": "^1.77.8"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5"
+  }
+}

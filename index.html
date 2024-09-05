@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self' http://localhost https://sepe.gov.ao/ ;">
+    <link href="./styles.css" rel="stylesheet">
+    <link href="./src/assets/styles/login.css" rel="stylesheet">
+    <link href="./src/assets/styles/app.css" rel="stylesheet">
+    <link rel="stylesheet" href="./src/assets/icons/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>Governo de Angola</title>
+</head>
+<body>
+    <main class="mainContainer" id="mainContainer"></main>
+    <section id="modal" class="modalFocus"></section>
+    <script type="module" src="./renderer.js"></script>
+</body>
+</html>

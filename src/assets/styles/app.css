@@ -1,0 +1,1016 @@
+.dashboard {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.menu {
+  background-color: var(--card);
+  width: 300px;
+
+  .headerMenu {
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    h2 {
+      color: var(--button);
+      font-size: 22pt;
+    }
+
+    img {
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  .listMenu {
+    padding: 12px;
+
+    li {
+      margin: 12px 0;
+      border-radius: 6px;
+      position: relative;
+      overflow: hidden;
+      &:hover {
+        a{
+          color: var(--button);
+        }
+      }
+
+      a {
+        padding: 12px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        text-decoration: none;
+        font-size: 12pt;
+        font-weight: bold;
+        color: var(--text2);
+      }
+    }
+
+    li.active {
+      /* background-color: var(--border); */
+
+      a {
+        color: var(--button);
+        i{
+          color: var(--button);
+        }
+      }
+    }
+    li.active::before{
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 4px;
+      background-color: var(--button);
+      height: 100%;
+      border-top-right-radius: 8px;
+      border-bottom-right-radius: 8px;
+    }
+  }
+}
+
+.containerElemets {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  max-height: 100vh;
+  overflow-y: auto;
+  display: block;
+
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+}
+
+.headerDashboard {
+  position: absolute;
+  position: sticky;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  background-color: var(--card);
+  width: 100%;
+  justify-content: flex-end;
+  gap: 22px;
+  z-index: 6;
+
+  .menuButton {
+    padding: 8px;
+    border-radius: 50%;
+    border: none;
+    background-color: transparent;
+
+    &:hover {
+      background-color: var(--button);
+      color: var(--colorButton);
+    }
+  }
+}
+
+.contentElements {
+  padding: 12px;
+  .pathContainer {
+    padding: 12px;
+    font-size: 14pt;
+  }
+
+  .cardElements {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    
+    @media screen and (max-width:850px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .cards {
+      background-color: var(--card);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      box-shadow: 0 4px 3px 0 #1c1c1c33;
+
+      h1 {
+        color: var(--button);
+      }
+
+      span {
+        color: var(--text2);
+      }
+    }
+  }
+
+  .recents {
+    width: 100%;
+    position: relative;
+    margin-top: 22px;
+    background-color: var(--card);
+    padding: 12px;
+    border-radius: 8px;
+    overflow: hidden;
+
+
+    h2 {
+      font-size: 13pt;
+    }
+
+    table {
+      width: 100%;
+      table-layout: auto;
+      border-collapse: collapse;
+      border-radius: 6px;
+      overflow-y: auto;
+      /* overflow: hidden; */
+      table-layout: auto;
+    
+      thead {
+        tr {
+          background-color: var(--button);
+    
+          th {
+            color: var(--colorButton);
+            border-left: 1px solid var(--border);
+            padding: 8px;
+          }
+        }
+      }
+    
+      tbody {
+        tr {
+          border-bottom: 1px solid var(--border);
+          margin-top: 12px;
+    
+          td {
+            padding: 8px;
+            color: var(--text2);
+           
+          }
+    
+          .buttonContent {
+            place-items: center;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+    
+            button {
+              padding: 8px;
+              border: none;
+              border-radius: 6px;
+              background-color: var(--button);
+              color: var(--colorButton);
+              font-weight: bold;
+            }
+          }
+        }
+      }
+    
+      
+      @media screen and (max-width: 1020px) {
+        thead {
+          display: none; 
+        }
+        tbody {
+          tr{
+            display: flex;
+            flex-direction: column;
+            border-top:1px solid var(--border) ;
+            padding: 2px;
+            td{
+              background-color: var(--body);  
+            }
+          }
+        }
+        
+      }
+    }
+    
+  }
+}
+
+.searchElement {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  border-bottom: 1px solid var(--border);
+  padding: 12px 0;
+}
+
+.searchBox {
+  display: flex;
+  align-items: center;
+  background-color: var(--card);
+  border-radius: 5px;
+  padding: 5px;
+  max-width: 300px;
+
+  input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 5px;
+    font-size: 16px;
+  }
+
+  button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+  }
+
+  button i {
+    font-size: 20px;
+    color: #333;
+  }
+}
+
+.topicTable {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+
+  button {
+    padding: 8px 22px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--button);
+    color: var(--colorButton);
+
+    i{
+      color: var(--colorButton);
+    }
+  }
+}
+
+.formCadastroViaturas {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: var(--card);
+  border-radius: 8px;
+  box-shadow: 0 0 10px #0000001a;
+
+  .formGroup {
+    margin-bottom: 15px;
+
+    textarea{
+      width: 100%;
+      padding: 10px;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      font-size: 16px;
+      outline: none;
+      background-color: var(--card);
+
+      &:focus {
+        outline: 2px solid var(--outline);
+      }
+    }
+    select{
+      width: 100%;
+      padding: 10px;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      font-size: 16px;
+      outline: none;
+      background-color: var(--card);
+      &:focus {
+        outline: 2px solid var(--outline);
+      }
+
+      option{
+        background-color: var(--card);
+      }
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+      color: var(--button);
+      font-size: 11pt;
+    }
+    
+
+    input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      font-size: 16px;
+      outline: none;
+      background-color: var(--card);
+      &:focus {
+        outline: 2px solid var(--outline);
+      }
+    }
+  }
+
+  .formButton {
+    button {
+      width: 150px;
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      font-weight: bold;
+
+      &:nth-of-type(1) {
+        background-color: var(--button);
+        color: var(--colorButton);
+      }
+
+      &:nth-of-type(2) {
+        background-color: transparent;
+        color: var(--error);
+      }
+
+
+    }
+
+  }
+}
+
+.textError {
+  /* cursor: default; */
+  max-width: 100%;
+  margin: 12px auto;
+  padding: 20px;
+  background-color: var(--card);
+  border-radius: 8px;
+  box-shadow: 0 0 10px #0000001a;
+}
+
+.textError.error {
+  color: var(--error);
+
+  span {
+    color: var(--error);
+  }
+}
+
+.textError.sucess {
+  color: var(--sucess);
+
+  span {
+    color: var(--sucess);
+  }
+}
+
+.optionsButton {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+
+  button {
+    padding: 4px;
+    border: none;
+    border-radius: 6px;
+    background-color: transparent;
+    &:nth-of-type(1) {
+      i{
+        color: var(--button);
+      }
+    }
+
+    &:nth-of-type(2) {
+      i{
+        color: var(--error);
+      }
+    }
+
+    &:nth-of-type(3) {
+      i{
+        color: orange;
+      }
+    }
+  }
+
+}
+
+.cardViatura {
+  ul {
+    padding: 12px;
+    background-color: var(--body);
+    border-radius: 6px;
+
+    li {
+      margin: 12px 0;
+      border-bottom: 1px solid var(--border);
+      padding: 8px;
+
+      small {
+        color: var(--text2);
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        flex-wrap: nowrap;
+      }
+
+      .closeButton {
+        padding: 6px 12px;
+        border-radius: 6px;
+        color: var(--error);
+        border: 1px solid var(--error);
+        background-color: transparent;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.modalFocus {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 12;
+  background-color: #27272793;
+
+  .choice {
+    background-color: var(--card);
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+
+    .popUpButtons {
+      button {
+        padding: 8px 12px;
+        border-radius: 6px;
+        font-weight: bold;
+        background-color: transparent;
+
+        &:nth-of-type(1) {
+          border: 1px solid var(--error);
+          color: var(--error);
+        }
+
+        &:nth-of-type(2) {
+          border: 1px solid var(--sucess);
+          color: var(--sucess);
+        }
+      }
+    }
+  }
+}
+
+.popUp {
+  background-color: var(--card);
+}
+
+.autoClick{
+  color: var(--button);
+  cursor: default;
+  padding: 4px;
+}
+.registerButton{
+  padding: 8px;
+  border: 1px solid var(--button);
+  border-radius: 6px;
+  color: var(--button);
+  font-weight: bold;
+  background-color: transparent;
+}
+.formGroupTel {
+  margin-bottom: 15px;
+  max-width: 300px;
+
+  label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: var(--button);
+    font-size: 11pt;
+  }
+
+  input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-size: 16px;
+    outline: none;
+
+    &:focus {
+      outline: 2px solid var(--outline);
+    }
+  }
+}
+.contentModal{
+  background-color: var(--card);
+  position: relative;
+  padding: 20px;
+  max-width: calc(100% - 200px);
+  max-height: calc(100% - 100px);
+  min-width: 600px;
+  overflow: hidden;
+  border-radius: 8px;
+  position: relative;
+  padding-top: 60px;
+
+  .topModal{
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    width: calc(100% - 22px);
+    border-radius: 6px;
+    padding: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    button{
+      padding: 4px;
+      border: none;
+      background-color: transparent;
+      i{
+        font-size: 16pt;
+      }
+    }
+  }
+}
+
+.containerInfracoes {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: var(--body);
+  border-radius: 8px;
+  box-shadow: 0 2px 10px #0000001a;
+}
+
+.cardInfra {
+  position: relative;
+  padding: 20px;
+  background-color: var(--card);
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin: 22px 0;
+}
+
+.cardActions {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 12px auto;
+  padding: 6px;
+  border-radius: 8px;
+  justify-content: flex-end;
+
+  select{
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    outline: none;
+    background-color: transparent;
+    color: var(--button);
+    option{
+      padding: 12px;
+    }
+  }
+
+  button{
+    font-weight: bold;
+    padding: 4px 12px;
+
+    &:nth-of-type(1){
+      i{
+        color: orange;
+      }
+    }
+
+    &:nth-of-type(2){
+      i{
+        color: var(--error);
+      }
+    }
+
+    &:nth-of-type(3){
+      i{
+        color: var(--button)
+      }
+    }
+  }
+
+}
+
+.actionBtn {
+  background: none;
+  border: none;
+  color: var(--button);
+  font-size: 1.2em;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.actionBtn:hover {
+  color: #0056b3;
+}
+
+.title {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.cf {
+  margin-bottom: 15px;
+}
+
+.cf b {
+  font-weight: 600;
+}
+
+.messageCard {
+  padding: 15px;
+  background-color: var(--outline);
+  border-left: 4px solid #007bff;
+  border-radius: 4px;
+  font-style: italic; 
+}
+
+
+.infoContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+  margin: 20px auto;
+  max-width: 1200px;
+}
+
+.infoCard {
+  padding: 15px;
+  background-color: var(--card);
+  border-radius: 8px;
+  box-shadow: 0 2px 10px #0000001a;
+  font-size: 0.9em;
+}
+
+.infoCard h4 {
+  margin-bottom: 10px;
+  font-size: 1.1em;
+  color: #007bff;
+}
+
+.infoCard p, .infoCard ul {
+  margin: 5px 0;
+}
+
+.infoCard ul {
+  padding-left: 15px;
+  list-style: disc;
+}
+
+.infoCard a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.infoCard a:hover {
+  text-decoration: underline;
+}
+
+
+/*  */
+
+.infractionsDashboard {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.dashboardCard {
+  flex: 1 1 calc(33.333% - 30px);
+  padding: 10px;
+  margin: 10px 0;
+  background-color: var(--card);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px #0000001a;
+  font-size: 0.8em; 
+}
+
+.dashboardCard h3 {
+  font-size: 1em; /* Tamanho de letra pequeno para os títulos */
+  margin-bottom: 5px;
+  color: #343a40;
+}
+
+.dashboardCard p {
+  margin: 3px 0;
+  font-size: 0.9em;
+}
+
+
+
+.listaUsuarios {
+  margin: 20px 0;
+  padding: 15px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background-color: var(--card);
+
+  h3 {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    color: #333;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+
+    .usuarioItem {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+      background-color: var(--card);
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+
+      input[type="checkbox"] {
+        margin-right: 10px;
+        cursor: pointer;
+        accent-color: #007bff; 
+      }
+
+      label {
+        font-size: 1rem;
+        color: #555;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .formButton {
+    margin-top: 15px;
+    display: flex;
+    justify-content: flex-end;
+
+    button {
+      padding: 8px 16px;
+      background-color: var(--button);
+      color: var(--colorButton);
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: #0056b3;
+      }
+
+      &:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+      }
+
+      &#preencherForm {
+        margin-left: 10px;
+      }
+    }
+  }
+}
+.inputBox{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  label{
+    color: var(--button);
+    font-weight: bold;
+  }
+  input{
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    &:focus{
+      outline: 2px solid var(--outline);
+    }
+  }
+
+}
+.modalForm{
+  width: 600px;
+}
+.results{
+  max-height: 350px;
+  overflow-y: auto;
+  ul{
+    li{
+      padding: 12px;
+      margin: 12px auto;
+      display: flex;
+      flex-direction: column;
+      border-bottom: 1px solid var(--border);
+      cursor:context-menu;
+      gap: 2px;
+      &:hover{ background-color: var(--border);  }
+    }
+  }
+}
+.resultAction{
+  justify-content: first baseline;
+  display: flex;
+  align-items: center;
+}
+details{
+  padding: 12px;
+  border-radius: 8px;
+  margin: 12px 0;
+  border: 1px solid var(--border);
+  transition: height .5s ease;
+  background-color: var(--card);
+
+  summary{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: default;
+    transition: all .3s ease;
+    i{
+      color: var(--button);
+      font-size: 22pt;
+    }
+  }
+
+  ul{
+    background-color: var(--body);
+    padding: 12px;
+    margin: 12px auto;
+    border-radius: 8px;
+    li{
+      margin: 12px 0;
+      i{color: var(--sucess);}
+    }
+    .optionButtons{
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 22px;
+      button{
+        padding: 6px;
+        border-radius: 8px;
+        background-color: transparent;
+        border: none;
+
+        &:nth-of-type(1){
+          i{color: var(--error);}
+        }
+        &:nth-of-type(2){
+          i{color: var(--error);}
+        }
+        &:nth-of-type(3){
+          i{color:var(--button);}
+        }
+      }
+    }
+  }
+}
+
+
+
+
+nav{
+	position: relative;
+	margin: 0 auto;
+	width: 100%;
+	background: var(--card);
+	border-radius: 8px;
+	font-size: 0;
+	box-shadow: 0 2px 3px 0 #0000001a;
+  color: var(--text2);
+  padding: 12px 22px;
+  display: flex;
+  justify-content: space-between;
+}
+nav button{
+	font-size: 15px;
+  color: var(--text2);
+	position: relative;
+	padding: 6px;
+  background-color: var(--card);
+  border-radius: 8px;
+  border: none;
+  color: var(--button);
+  i{color: var(--button);}
+}
+
+.reset{
+  background-color: var(--card);
+  padding: 0;
+  width: auto;
+  margin: 12px auto;
+  box-shadow: none;
+  line-height: 33px;
+  
+}
+
+.cardProfilo{
+  padding: 22px;
+  border-radius: 8px;
+  max-width: 300px;
+  border: 1px solid var(--border);
+  background: var(--body);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  column-gap: 12px;
+  gap: 22px;
+  position: fixed;
+  top: 22px;
+  z-index: 12;
+  right: 12px;
+
+  i{
+    font-size: 33pt;
+  }
+  .btn{
+    button{
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      margin: 4px 0;
+      padding: 12px;
+      width: 100%;
+      i{
+        font-size: 12pt;
+      }
+      &:nth-of-type(1){
+        background-color: var(--error);
+        color: var(--colorButton);
+        i{color: var(--colorButton);}
+      }
+      &:nth-of-type(2){
+        background-color: var(--button);
+        color: var(--colorButton);
+        i{color: var(--colorButton);}
+      }
+      &:nth-of-type(3){
+        background-color: var(--border);
+        color: var(--colorButton);
+        i{color: var(--colorButton);}
+      }
+    }
+  }
+}
+

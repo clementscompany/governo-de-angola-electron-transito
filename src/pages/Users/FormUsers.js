@@ -1,6 +1,8 @@
-export default function FormUsers(data){
+export default function FormUsers(data, title){
   return(
       `<form class="formCadastroViaturas " id="formCadastroUsers">
+       ${title ? `<h2>${title}</h2>` : `<h2>Cadastro de usuário</h2>`}
+      <br>
       <div class="formGroup">
           <label for="name">Nome completo:</label>
           <input type="text" id="name" name="name" placeholder="Digite o nome completo" class="input"

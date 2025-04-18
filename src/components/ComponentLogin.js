@@ -2,7 +2,7 @@ function ComponentLogin(params) {
     var userNameCard = "";
     params ?
     params.forEach(username => {
-        userNameCard += `<option value="${ username.username }">${ username.username }</option>`;
+        userNameCard += `<option value="${ username.id }">${ username.nome }</option>`;
     })
      : "";
     return(`

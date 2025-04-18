@@ -34,8 +34,9 @@
       border-radius: 6px;
       position: relative;
       overflow: hidden;
+
       &:hover {
-        a{
+        a {
           color: var(--button);
         }
       }
@@ -57,12 +58,14 @@
 
       a {
         color: var(--button);
-        i{
+
+        i {
           color: var(--button);
         }
       }
     }
-    li.active::before{
+
+    li.active::before {
       content: "";
       position: absolute;
       left: 0;
@@ -118,6 +121,7 @@
 
 .contentElements {
   padding: 12px;
+
   .pathContainer {
     padding: 12px;
     font-size: 14pt;
@@ -127,10 +131,11 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 12px;
-    
+
     @media screen and (max-width:850px) {
       grid-template-columns: repeat(2, 1fr);
     }
+
     .cards {
       background-color: var(--card);
       display: flex;
@@ -170,11 +175,11 @@
       overflow-y: auto;
       /* overflow: hidden; */
       table-layout: auto;
-    
+
       thead {
         tr {
           background-color: var(--button);
-    
+
           th {
             color: var(--colorButton);
             border-left: 1px solid var(--border);
@@ -182,24 +187,24 @@
           }
         }
       }
-    
+
       tbody {
         tr {
           border-bottom: 1px solid var(--border);
           margin-top: 12px;
-    
+
           td {
             padding: 8px;
             color: var(--text2);
-           
+
           }
-    
+
           .buttonContent {
             place-items: center;
             align-items: center;
             justify-content: center;
             display: flex;
-    
+
             button {
               padding: 8px;
               border: none;
@@ -211,27 +216,29 @@
           }
         }
       }
-    
-      
+
+
       @media screen and (max-width: 1020px) {
         thead {
-          display: none; 
+          display: none;
         }
+
         tbody {
-          tr{
+          tr {
             display: flex;
             flex-direction: column;
-            border-top:1px solid var(--border) ;
+            border-top: 1px solid var(--border);
             padding: 2px;
-            td{
-              background-color: var(--body);  
+
+            td {
+              background-color: var(--body);
             }
           }
         }
-        
+
       }
     }
-    
+
   }
 }
 
@@ -288,13 +295,14 @@
     background-color: var(--button);
     color: var(--colorButton);
 
-    i{
+    i {
       color: var(--colorButton);
     }
   }
 }
 
 .formCadastroViaturas {
+  min-width: 400px;
   max-width: 100%;
   margin: 0 auto;
   padding: 20px;
@@ -302,10 +310,17 @@
   border-radius: 8px;
   box-shadow: 0 0 10px #0000001a;
 
+  h2 {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: var(--button);
+    font-size: 22pt;
+  }
+
   .formGroup {
     margin-bottom: 15px;
 
-    textarea{
+    textarea {
       width: 100%;
       padding: 10px;
       border: 1px solid var(--border);
@@ -318,7 +333,8 @@
         outline: 2px solid var(--outline);
       }
     }
-    select{
+
+    select {
       width: 100%;
       padding: 10px;
       border: 1px solid var(--border);
@@ -326,11 +342,12 @@
       font-size: 16px;
       outline: none;
       background-color: var(--card);
+
       &:focus {
         outline: 2px solid var(--outline);
       }
 
-      option{
+      option {
         background-color: var(--card);
       }
     }
@@ -342,7 +359,7 @@
       color: var(--button);
       font-size: 11pt;
     }
-    
+
 
     input {
       width: 100%;
@@ -352,6 +369,7 @@
       font-size: 16px;
       outline: none;
       background-color: var(--card);
+
       &:focus {
         outline: 2px solid var(--outline);
       }
@@ -359,6 +377,10 @@
   }
 
   .formButton {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
     button {
       width: 150px;
       padding: 10px;
@@ -393,6 +415,10 @@
   background-color: var(--card);
   border-radius: 8px;
   box-shadow: 0 0 10px #0000001a;
+
+  span {
+    color: var(--colorButton);
+  }
 }
 
 .textError.error {
@@ -422,20 +448,21 @@
     border: none;
     border-radius: 6px;
     background-color: transparent;
+
     &:nth-of-type(1) {
-      i{
+      i {
         color: var(--button);
       }
     }
 
     &:nth-of-type(2) {
-      i{
+      i {
         color: var(--error);
       }
     }
 
     &:nth-of-type(3) {
-      i{
+      i {
         color: orange;
       }
     }
@@ -515,12 +542,13 @@
   background-color: var(--card);
 }
 
-.autoClick{
+.autoClick {
   color: var(--button);
   cursor: default;
   padding: 4px;
 }
-.registerButton{
+
+.registerButton {
   padding: 8px;
   border: 1px solid var(--button);
   border-radius: 6px;
@@ -528,6 +556,7 @@
   font-weight: bold;
   background-color: transparent;
 }
+
 .formGroupTel {
   margin-bottom: 15px;
   max-width: 300px;
@@ -553,7 +582,8 @@
     }
   }
 }
-.contentModal{
+
+.contentModal {
   background-color: var(--card);
   position: relative;
   padding: 20px;
@@ -565,7 +595,7 @@
   position: relative;
   padding-top: 60px;
 
-  .topModal{
+  .topModal {
     position: absolute;
     top: 12px;
     left: 12px;
@@ -576,11 +606,12 @@
     align-items: center;
     justify-content: space-between;
 
-    button{
+    button {
       padding: 4px;
       border: none;
       background-color: transparent;
-      i{
+
+      i {
         font-size: 16pt;
       }
     }
@@ -614,36 +645,37 @@
   border-radius: 8px;
   justify-content: flex-end;
 
-  select{
+  select {
     padding: 8px;
     border-radius: 8px;
     border: 1px solid var(--border);
     outline: none;
     background-color: transparent;
     color: var(--button);
-    option{
+
+    option {
       padding: 12px;
     }
   }
 
-  button{
+  button {
     font-weight: bold;
     padding: 4px 12px;
 
-    &:nth-of-type(1){
-      i{
+    &:nth-of-type(1) {
+      i {
         color: orange;
       }
     }
 
-    &:nth-of-type(2){
-      i{
+    &:nth-of-type(2) {
+      i {
         color: var(--error);
       }
     }
 
-    &:nth-of-type(3){
-      i{
+    &:nth-of-type(3) {
+      i {
         color: var(--button)
       }
     }
@@ -683,7 +715,7 @@
   background-color: var(--outline);
   border-left: 4px solid #007bff;
   border-radius: 4px;
-  font-style: italic; 
+  font-style: italic;
 }
 
 
@@ -709,7 +741,8 @@
   color: #007bff;
 }
 
-.infoCard p, .infoCard ul {
+.infoCard p,
+.infoCard ul {
   margin: 5px 0;
 }
 
@@ -743,11 +776,12 @@
   background-color: var(--card);
   border-radius: 8px;
   box-shadow: 0 2px 8px #0000001a;
-  font-size: 0.8em; 
+  font-size: 0.8em;
 }
 
 .dashboardCard h3 {
-  font-size: 1em; /* Tamanho de letra pequeno para os títulos */
+  font-size: 1em;
+  /* Tamanho de letra pequeno para os títulos */
   margin-bottom: 5px;
   color: #343a40;
 }
@@ -788,7 +822,7 @@
       input[type="checkbox"] {
         margin-right: 10px;
         cursor: pointer;
-        accent-color: #007bff; 
+        accent-color: #007bff;
       }
 
       label {
@@ -829,51 +863,63 @@
     }
   }
 }
-.inputBox{
+
+.inputBox {
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 8px;
-  label{
+
+  label {
     color: var(--button);
     font-weight: bold;
   }
-  input{
+
+  input {
     width: 100%;
     padding: 12px;
     border-radius: 8px;
     border: 1px solid var(--border);
-    &:focus{
+
+    &:focus {
       outline: 2px solid var(--outline);
     }
   }
 
 }
-.modalForm{
+
+.modalForm {
   width: 600px;
 }
-.results{
+
+.results {
   max-height: 350px;
   overflow-y: auto;
-  ul{
-    li{
+
+  ul {
+    li {
       padding: 12px;
       margin: 12px auto;
       display: flex;
       flex-direction: column;
       border-bottom: 1px solid var(--border);
-      cursor:context-menu;
+      cursor: context-menu;
       gap: 2px;
-      &:hover{ background-color: var(--border);  }
+
+      &:hover {
+        background-color: var(--border);
+      }
     }
   }
 }
-.resultAction{
+
+.resultAction {
   justify-content: first baseline;
   display: flex;
   align-items: center;
 }
-details{
+
+details {
   padding: 12px;
   border-radius: 8px;
   margin: 12px 0;
@@ -881,46 +927,61 @@ details{
   transition: height .5s ease;
   background-color: var(--card);
 
-  summary{
+  summary {
     display: flex;
     align-items: center;
     gap: 12px;
     cursor: default;
     transition: all .3s ease;
-    i{
+
+    i {
       color: var(--button);
       font-size: 22pt;
     }
   }
 
-  ul{
+  ul {
     background-color: var(--body);
     padding: 12px;
     margin: 12px auto;
     border-radius: 8px;
-    li{
+
+    li {
       margin: 12px 0;
-      i{color: var(--sucess);}
+
+      i {
+        color: var(--sucess);
+      }
     }
-    .optionButtons{
+
+    .optionButtons {
       display: flex;
       align-items: center;
       justify-content: flex-end;
       gap: 22px;
-      button{
+
+      button {
         padding: 6px;
         border-radius: 8px;
         background-color: transparent;
         border: none;
 
-        &:nth-of-type(1){
-          i{color: var(--error);}
+        &:nth-of-type(1) {
+          i {
+            color: var(--error);
+          }
         }
-        &:nth-of-type(2){
-          i{color: var(--error);}
+
+        &:nth-of-type(2) {
+          i {
+            color: var(--error);
+          }
         }
-        &:nth-of-type(3){
-          i{color:var(--button);}
+
+        &:nth-of-type(3) {
+          i {
+            color: var(--button);
+          }
         }
       }
     }
@@ -930,42 +991,46 @@ details{
 
 
 
-nav{
-	position: relative;
-	margin: 0 auto;
-	width: 100%;
-	background: var(--card);
-	border-radius: 8px;
-	font-size: 0;
-	box-shadow: 0 2px 3px 0 #0000001a;
+nav {
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  background: var(--card);
+  border-radius: 8px;
+  font-size: 0;
+  box-shadow: 0 2px 3px 0 #0000001a;
   color: var(--text2);
   padding: 12px 22px;
   display: flex;
   justify-content: space-between;
 }
-nav button{
-	font-size: 15px;
+
+nav button {
+  font-size: 15px;
   color: var(--text2);
-	position: relative;
-	padding: 6px;
+  position: relative;
+  padding: 6px;
   background-color: var(--card);
   border-radius: 8px;
   border: none;
   color: var(--button);
-  i{color: var(--button);}
+
+  i {
+    color: var(--button);
+  }
 }
 
-.reset{
+.reset {
   background-color: var(--card);
   padding: 0;
   width: auto;
   margin: 12px auto;
   box-shadow: none;
   line-height: 33px;
-  
+
 }
 
-.cardProfilo{
+.cardProfilo {
   padding: 22px;
   border-radius: 8px;
   max-width: 300px;
@@ -982,35 +1047,48 @@ nav button{
   z-index: 12;
   right: 12px;
 
-  i{
+  i {
     font-size: 33pt;
   }
-  .btn{
-    button{
+
+  .btn {
+    button {
       border-radius: 8px;
       border: 1px solid var(--border);
       margin: 4px 0;
       padding: 12px;
       width: 100%;
-      i{
+
+      i {
         font-size: 12pt;
       }
-      &:nth-of-type(1){
+
+      &:nth-of-type(1) {
         background-color: var(--error);
         color: var(--colorButton);
-        i{color: var(--colorButton);}
+
+        i {
+          color: var(--colorButton);
+        }
       }
-      &:nth-of-type(2){
+
+      &:nth-of-type(2) {
         background-color: var(--button);
         color: var(--colorButton);
-        i{color: var(--colorButton);}
+
+        i {
+          color: var(--colorButton);
+        }
       }
-      &:nth-of-type(3){
+
+      &:nth-of-type(3) {
         background-color: var(--border);
         color: var(--colorButton);
-        i{color: var(--colorButton);}
+
+        i {
+          color: var(--colorButton);
+        }
       }
     }
   }
 }
-
